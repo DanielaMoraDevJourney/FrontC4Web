@@ -1,0 +1,35 @@
+<div class="d-flex flex-column align-items-center justify-content-start" style="height: 100vh; background-color: #01448f; padding-top: 50px;">
+    <!-- Logo -->
+    <div class="text-center text-white mb-4">
+      <img src="https://taxstrategy.com.ec/wp-content/uploads/2021/01/unnamed.jpg" 
+           alt="SRI Ecuador" style="width: 120px;" />
+    </div>
+  
+    <!-- Card Box -->
+    <div class="card p-4" style="width: 400px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <h3 class="text-center mb-4">Consulta de Información</h3>
+      <form (ngSubmit)="onSubmit()" #cedulaForm="ngForm">
+        <div class="form-group">
+          <label for="cedula" class="mb-2">Cédula</label>
+          <input
+            type="text"
+            id="cedula"
+            class="form-control"
+            [(ngModel)]="cedula"
+            name="cedula"
+            required
+            minlength="10"
+            #cedulaInput="ngModel"
+            placeholder="Ingrese su número de cédula"
+          />
+          <div *ngIf="cedulaInput.invalid && cedulaInput.touched" class="text-danger mt-2">
+            La cédula debe tener al menos 10 caracteres.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="cedulaForm.invalid">
+          Consultar
+        </button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,24 @@
+<div style="background-color: #01448f; min-height: 100vh; padding: 20px;">
+    <div class="text-center text-white mb-4">
+        <img src="https://taxstrategy.com.ec/wp-content/uploads/2021/01/unnamed.jpg" 
+             alt="SRI Ecuador" style="width: 120px;" />
+      </div>
+    <div class="container bg-white p-4 rounded shadow">
+      <h2 class="text-center">Resultados</h2>
+      <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th>Contribuyente</th>
+            <th>Puntos en Licencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ contribuyente === 'true' ? 'Sí' : 'No' }}</td>
+            <td>{{ puntos || 'No tiene licencia' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
